@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ChatMessage } from "./ChatMessage";
 import { ChatOpener } from "./ChatOpener";
@@ -25,28 +26,16 @@ export const ChatBody: React.FC<ChatBodyProps> = ({
         <ChatOpener models={["o3-mini", "Claude 3.7", "Gemini 2.0 Flash"]} />
 
         <div className="z-0 w-full mt-8 max-md:max-w-full">
-          {messages
-            .filter((msg) => !msg.isUser)
-            .map((message) => (
-              <div key={message.id} className="mt-5 first:mt-0">
-                <ChatMessage
-                  avatar={message.avatar}
-                  content={message.content}
-                />
-              </div>
-            ))}
-        </div>
-
-        {messages
-          .filter((msg) => msg.isUser)
-          .map((message) => (
-            <ChatMessage
-              key={message.id}
-              avatar={message.avatar}
-              content={message.content}
-              isUser={true}
-            />
+          {messages.map((message) => (
+            <div key={message.id} className="mt-5 first:mt-0">
+              <ChatMessage
+                avatar={message.avatar}
+                content={message.content}
+                isUser={message.isUser}
+              />
+            </div>
           ))}
+        </div>
 
         <div className="absolute z-0 flex min-h-[157px] w-full bottom-[-157px] h-[157px] inset-x-0 bg-gradient-to-t from-white to-transparent" />
       </div>
