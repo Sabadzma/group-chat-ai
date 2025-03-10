@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 interface ChatInputProps {
@@ -23,9 +24,6 @@ export const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
 
   return (
     <div className="self-center z-0 flex w-[750px] max-w-[750px] flex-col items-center mt-[29px] max-md:max-w-full">
-      <div className="self-stretch w-full gap-2 text-sm text-cyan-700 font-normal pt-1.5 pb-7 px-3 rounded-[16px_16px_0px_0px] max-md:max-w-full">
-        Agents are waiting for your response
-      </div>
       <div className="bg-zinc-100 w-full overflow-hidden p-3 rounded-2xl max-md:max-w-full">
         <div className="flex-1 shrink basis-[0%] min-h-12 w-full gap-2.5 text-sm text-zinc-500 font-normal pl-1 pt-1 max-md:max-w-full">
           <textarea
