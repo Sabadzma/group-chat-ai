@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ChatMessage } from "./ChatMessage";
 import { ChatOpener } from "./ChatOpener";
@@ -54,7 +55,9 @@ export const ChatBody: React.FC<ChatBodyProps> = ({
       <div className="absolute z-0 flex min-h-[63px] max-w-full w-[1162px] h-[63px] top-0 inset-x-0 bg-gradient-to-b from-white to-transparent" />
       <div className="absolute z-0 flex min-h-[157px] max-w-full w-[1162px] h-[157px] bottom-0 inset-x-0 bg-gradient-to-t from-white to-transparent" />
 
-      <ChatInput onSendMessage={onSendMessage} />
+      <div className="absolute bottom-4 w-full left-0 px-6">
+        <ChatInput onSendMessage={onSendMessage} />
+      </div>
     </div>
   );
 };
